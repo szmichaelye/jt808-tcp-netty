@@ -330,8 +330,17 @@ public class BitOperator {
 	}
 
 	public float byte2Float(byte[] bs) {
+		int da = (((bs[0] & 0xFF) << 24) + ((bs[1] & 0xFF) << 16) + ((bs[2] & 0xFF) << 8) + (bs[3] & 0xFF));
+		System.out.println("the int data =" + da);
 		return Float.intBitsToFloat(
-				(((bs[3] & 0xFF) << 24) + ((bs[2] & 0xFF) << 16) + ((bs[1] & 0xFF) << 8) + (bs[0] & 0xFF)));
+				(((bs[0] & 0xFF) << 24) + ((bs[1] & 0xFF) << 16) + ((bs[2] & 0xFF) << 8) + (bs[3] & 0xFF)));
+	}
+	public float byte2Float2(byte[] bs) {
+		byte b = 0;
+		int da = (((bs[0] & 0xFF) << 24) + ((bs[1] & 0xFF) << 16) + ((b & 0xFF) << 8) + (b & 0xFF));
+		System.out.println("the int data =" + da);
+		return Float.intBitsToFloat(
+				(((bs[0] & 0xFF) << 24) + ((bs[1] & 0xFF) << 16) + ((b & 0xFF) << 8) + (b & 0xFF)));
 	}
 
 	public float byteBE2Float(byte[] bytes) {

@@ -236,12 +236,15 @@ public class MsgDecoder {
 
 	private float parseFloatFromBytes(byte[] data, int startIndex, int length, float defaultVal) {
 		try {
-			// 字节数大于4,从起始索引开始向后处理4个字节,其余超出部分丢弃
+            // 字节数大于4,从起始索引开始向后处理4个字节,其余超出部分丢弃
 			final int len = length > 4 ? 4 : length;
 			byte[] tmp = new byte[len];
 			System.arraycopy(data, startIndex, tmp, 0, len);
-			System.out.println(Arrays.toString(data));
-			return bitOperator.byte2Float(tmp);
+//			System.out.println(Arrays.toString(data));
+			if(length == 4)
+				return bitOperator.byte2Float(tmp);
+			else
+				return bitOperator.byte2Float2(tmp);
 		} catch (Exception e) {
 			log.error("解析浮点数出错:{}", e.getMessage());
 			e.printStackTrace();

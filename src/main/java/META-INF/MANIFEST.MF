@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: cn.hylexus.jt808.server.TCPServer
+

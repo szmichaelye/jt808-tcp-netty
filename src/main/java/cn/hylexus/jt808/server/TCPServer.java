@@ -62,7 +62,6 @@ public class TCPServer {
 
 		this.log.info("TCP服务启动完毕,port={}", this.port);
 		ChannelFuture channelFuture = serverBootstrap.bind(port).sync();
-
 		channelFuture.channel().closeFuture().sync();
 	}
 
@@ -110,7 +109,7 @@ public class TCPServer {
 	}
 
 	public static void main(String[] args) throws Exception {
-		TCPServer server = new TCPServer(3398);
+		TCPServer server = new TCPServer(8100);
 		server.startServer();
 
 		// Thread.sleep(3000);

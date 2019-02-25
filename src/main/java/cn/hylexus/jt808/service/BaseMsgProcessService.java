@@ -39,7 +39,6 @@ public class BaseMsgProcessService {
 		if (session == null) {
 			return defaultValue;
 		}
-
 		return session.currentFlowId();
 	}
 
