@@ -92,6 +92,6 @@ public class MsgEncoder {
 				new byte[] { TPMSConsts.pkg_delimiter }// 0x7e
 		));
 		// 转义
-		return jt808ProtocolUtils.doEscape4Send(noEscapedBytes, 1, noEscapedBytes.length - 2);
+		return jt808ProtocolUtils.doEscape4Send(noEscapedBytes, 1, noEscapedBytes.length - 1);
 	}
 }
